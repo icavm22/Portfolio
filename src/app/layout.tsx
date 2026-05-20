@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Antonio Victoriano - Consultor Empresarial',
@@ -14,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="bg-primary text-text">
+        <Navigation />
         {children}
+        <Footer />
       </body>
     </html>
   );
