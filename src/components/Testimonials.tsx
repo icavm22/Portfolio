@@ -1,91 +1,78 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import { FiStar } from 'react-icons/fi'
+import { motion } from 'framer-motion';
 
-const testimonials = [
-  {
-    name: 'Carlos Rodríguez',
-    position: 'Gerente de Proyectos',
-    company: 'Desarrollos Mafersa',
-    text: 'Antonio transformó completamente nuestra forma de controlar proyectos. Los dashboards que implementó nos dieron visibilidad real y redujeron significativamente los retrasos.',
-    avatar: '👨‍💼',
-  },
-  {
-    name: 'María González',
-    position: 'Directora Financiera',
-    company: 'Alora Desarrollos',
-    text: 'Su expertise en BI permitió automatizar nuestros reportes mensuales. Ahora tenemos información confiable al instante en lugar de esperar días.',
-    avatar: '👩‍💼',
-  },
-  {
-    name: 'Juan Pérez',
-    position: 'CEO',
-    company: 'PIAS SA',
-    text: 'La consultoría estratégica de Antonio fue clave para optimizar nuestras operaciones. Recomendado 100% para cualquier empresa que busque transformación digital.',
-    avatar: '👨‍💻',
-  },
-  {
-    name: 'Laura Martínez',
-    position: 'Coordinadora Operativa',
-    company: 'Sepsa Prefabricados',
-    text: 'Profesional, dedicado y con un profundo conocimiento técnico. El sistema que implementó sigue siendo fundamental en nuestras operaciones.',
-    avatar: '👩‍🔬',
-  },
-  {
-    name: 'Roberto López',
-    position: 'Superintendent',
-    company: 'American Industries',
-    text: 'Excelente gestor de proyectos. Entiende tanto la parte técnica como operativa. Definitivamente volveríamos a trabajar con Antonio.',
-    avatar: '👨‍🏫',
-  },
-]
+const Testimonials = () => {
+  const testimonials = [
+    {
+      name: 'Carlos García',
+      company: 'Tech Corp',
+      text: 'Antonio transformó nuestros datos en decisiones estratégicas. Increíble profesional.',
+      rating: 5,
+    },
+    {
+      name: 'María López',
+      company: 'Financial Group',
+      text: 'Su expertise en Power BI nos ahorro miles en implementación. Lo recomiendo 100%.',
+      rating: 5,
+    },
+    {
+      name: 'Juan Martínez',
+      company: 'E-Commerce Plus',
+      text: 'Profesional serio, entrega a tiempo y resultados excepcionales.',
+      rating: 5,
+    },
+    {
+      name: 'Ana Rodríguez',
+      company: 'Startup Ventures',
+      text: 'Antonio fue clave en nuestro crecimiento. Su asesoramiento fue invaluable.',
+      rating: 5,
+    },
+    {
+      name: 'Roberto Silva',
+      company: 'Manufacturing Inc',
+      text: 'Excelente consultor. Entiende el negocio, no solo la tecnología.',
+      rating: 5,
+    },
+  ];
 
-export default function Testimonials() {
   return (
-    <section id="testimonios" className="section bg-secondary/50">
-      <div className="container-max">
-        <motion.div
+    <section className="py-20 px-6 md:px-12 lg:px-20 bg-secondary/30">
+      <div className="max-w-7xl mx-auto">
+        <motion.h2
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-5xl font-bold mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Testimonios de Clientes
-          </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Lo que dicen de mi trabajo profesionales en el sector
-          </p>
-        </motion.div>
+          Testimonios de <span className="text-accent">Clientes</span>
+        </motion.h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
             <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-primary/50 border border-accent/20 rounded-2xl p-8 hover:border-accent/50 transition-all duration-300"
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="p-8 bg-primary/50 border border-accent/20 rounded-lg hover:border-accent/50 transition-all duration-300"
             >
               <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <FiStar key={i} className="text-accent fill-current" size={18} />
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <span key={i} className="text-accent text-xl">★</span>
                 ))}
               </div>
-              <p className="text-gray-300 mb-6 italic leading-relaxed">\"{testimonial.text}\"</p>
-              <div className="flex items-center gap-4">
-                <div className="text-4xl">{testimonial.avatar}</div>
-                <div>
-                  <p className="font-bold text-accent">{testimonial.name}</p>
-                  <p className="text-sm text-gray-400">{testimonial.position}</p>
-                  <p className="text-xs text-gray-500">{testimonial.company}</p>
-                </div>
+              <p className="text-gray-300 mb-6 italic">"{testimonial.text}"</p>
+              <div className="border-t border-accent/20 pt-4">
+                <p className="font-semibold text-accent">{testimonial.name}</p>
+                <p className="text-gray-400 text-sm">{testimonial.company}</p>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
+
+export default Testimonials;
