@@ -1,18 +1,16 @@
 'use client';
 
-import Navigation from '@/src/components/Navigation';
-import Hero from '@/src/components/Hero';
-import Services from '@/src/components/Services';
-import Projects from '@/src/components/Projects';
-import Companies from '@/src/components/Companies';
-import Dashboards from '@/src/components/Dashboards';
-import Testimonials from '@/src/components/Testimonials';
-import CTA from '@/src/components/CTA';
+import Hero from '@/components/Hero';
+import Services from '@/components/Services';
+import Projects from '@/components/Projects';
+import Companies from '@/components/Companies';
+import Dashboards from '@/components/Dashboards';
+import Testimonials from '@/components/Testimonials';
+import CTA from '@/components/CTA';
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-b from-primary via-secondary to-primary">
-      <Navigation />
+    <main>
       <Hero />
       <Services />
       <Projects />
@@ -20,6 +18,6 @@ export default function Home() {
       <Dashboards />
       <Testimonials />
       <CTA />
-    </div>
+    </main>
   );
 }
