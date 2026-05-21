@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Antonio Victoriano - Consultor Empresarial',
-  description: 'Especialista en Business Intelligence, Power BI y consultoría empresarial',
+  description: 'Portafolio profesional especializado en Business Intelligence y Control de Proyectos de Construcción',
+  keywords: 'Business Intelligence, Project Management, Construction, BI, Dashboard, Power BI',
 };
 
 export default function RootLayout({
@@ -15,10 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="bg-primary text-text">
-        <Navigation />
+      <head>
+        <meta charSet="utf-8" />
+      </head>
+      <body>
         {children}
-        <Footer />
       </body>
     </html>
   );

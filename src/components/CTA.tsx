@@ -1,43 +1,81 @@
 'use client';
 
+import React from 'react';
 import { motion } from 'framer-motion';
-import { FaWhatsapp, FaEnvelope } from 'react-icons/fa';
+import { FiMail, FiPhone, FiLinkedin } from 'react-icons/fi';
 
-const CTA = () => {
+export default function CTA() {
   return (
-    <section id="contact" className="py-20 px-6 md:px-12 lg:px-20">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-4xl mx-auto text-center bg-gradient-to-r from-accent/10 to-accent/5 border border-accent/30 rounded-2xl p-12"
-      >
-        <h2 className="text-4xl md:text-5xl font-bold mb-6">
-          ¿Listo para <span className="text-accent">Transformar</span> tu Negocio?
-        </h2>
-        <p className="text-xl text-gray-300 mb-8">
-          Contacta conmigo para hablar sobre cómo puedo ayudarte con tus necesidades de BI y consultoría.
-        </p>
-        
-        <div className="flex flex-col md:flex-row gap-4 justify-center">
-          <a
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-accent-light/5" />
+      <div className="absolute top-20 -right-40 w-96 h-96 bg-accent opacity-5 rounded-full blur-3xl" />
+      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-accent opacity-5 rounded-full blur-3xl" />
+
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl sm:text-5xl font-bold text-text-light mb-6">
+            ¿Listo para transformar tu operación?
+          </h2>
+          <p className="text-text-muted text-lg mb-12 max-w-2xl mx-auto">
+            Estoy disponible para discutir tus necesidades específicas en Business Intelligence,
+            gestión de proyectos o consultoría estratégica.
+          </p>
+        </motion.div>
+
+        {/* Contact Options */}
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <motion.a
             href="mailto:ic.avm22@gmail.com"
-            className="flex items-center justify-center gap-2 px-8 py-4 bg-accent text-primary font-semibold rounded-lg hover:bg-cyan-400 transition-all duration-300 transform hover:scale-105"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-primary border border-secondary rounded-lg p-8 hover:border-accent hover:shadow-glow transition-all group"
           >
-            <FaEnvelope /> Email
-          </a>
-          <a
-            href="https://wa.me/18123995470"
+            <FiMail className="w-12 h-12 text-accent mx-auto mb-4 group-hover:scale-110 transition-transform" />
+            <h3 className="text-xl font-bold text-text-light mb-2">Email</h3>
+            <p className="text-accent font-semibold">ic.avm22@gmail.com</p>
+          </motion.a>
+
+          <motion.a
+            href="tel:+18123995470"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-primary border border-secondary rounded-lg p-8 hover:border-accent hover:shadow-glow transition-all group"
+          >
+            <FiPhone className="w-12 h-12 text-accent mx-auto mb-4 group-hover:scale-110 transition-transform" />
+            <h3 className="text-xl font-bold text-text-light mb-2">Teléfono</h3>
+            <p className="text-accent font-semibold">+1 812-399-5470</p>
+          </motion.a>
+
+          <motion.a
+            href="https://www.linkedin.com/in/antoniovic/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 px-8 py-4 border-2 border-accent text-accent rounded-lg hover:bg-accent hover:text-primary transition-all duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-primary border border-secondary rounded-lg p-8 hover:border-accent hover:shadow-glow transition-all group"
           >
-            <FaWhatsapp /> WhatsApp
-          </a>
+            <FiLinkedin className="w-12 h-12 text-accent mx-auto mb-4 group-hover:scale-110 transition-transform" />
+            <h3 className="text-xl font-bold text-text-light mb-2">LinkedIn</h3>
+            <p className="text-accent font-semibold">Conectar</p>
+          </motion.a>
         </div>
-      </motion.div>
+
+        {/* CTA Button */}
+        <motion.a
+          href="mailto:ic.avm22@gmail.com?subject=Solicitud%20de%20Consultoría&body=Hola%20Antonio%2C%20me%20gustaría%20agendar%20una%20reunión..."
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="inline-block px-10 py-4 bg-gradient-to-r from-accent to-accent-light text-primary rounded-lg font-semibold hover:shadow-glow-lg transition-all text-lg"
+        >
+          Agendar Consulta
+        </motion.a>
+      </div>
     </section>
   );
-};
-
-export default CTA;
+}

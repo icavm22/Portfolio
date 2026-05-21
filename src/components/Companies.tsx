@@ -1,45 +1,48 @@
 'use client';
 
+import React from 'react';
 import { motion } from 'framer-motion';
 
-const Companies = () => {
-  const companies = [
-    { name: 'Empresa Fortune 500', role: 'Senior BI Consultant' },
-    { name: 'Startup Tech', role: 'Data Analyst Lead' },
-    { name: 'Grupo Empresarial', role: 'Business Intelligence' },
-    { name: 'Consultora Global', role: 'Consultor Senior' },
-    { name: 'Fintech Company', role: 'Analytics Manager' },
-  ];
+const companies = [
+  { id: 1, name: 'Desarrollos Mafersa', logo: '🏗️' },
+  { id: 2, name: 'Alora Desarrollos', logo: '🏢' },
+  { id: 3, name: 'Sepsa Prefabricados', logo: '⚙️' },
+  { id: 4, name: 'PIAS SA', logo: '📊' },
+  { id: 5, name: 'American Industries', logo: '🔧' },
+];
 
+export default function Companies() {
   return (
-    <section className="py-20 px-6 md:px-12 lg:px-20 bg-secondary/30">
+    <section id="companies" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/50">
       <div className="max-w-7xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold mb-16 text-center"
+          viewport={{ once: true }}
+          className="text-center mb-16"
         >
-          Empresas con las que he <span className="text-accent">Trabajado</span>
-        </motion.h2>
+          <h2 className="text-4xl sm:text-5xl font-bold text-text-light mb-4">Empresas con las que hemos trabajado</h2>
+          <p className="text-text-muted text-lg">Experiencia con líderes de la industria de construcción e ingeniería</p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {companies.map((company, index) => (
             <motion.div
-              key={index}
+              key={company.id}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-6 bg-primary/50 border border-accent/20 rounded-lg text-center hover:border-accent/50 transition-all duration-300"
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.1, boxShadow: '0 0 30px rgba(0, 212, 255, 0.3)' }}
+              className="bg-primary border border-secondary rounded-lg p-8 flex flex-col items-center justify-center h-40 hover:border-accent transition-all cursor-pointer"
             >
-              <h3 className="text-lg font-semibold text-accent mb-2">{company.name}</h3>
-              <p className="text-gray-400 text-sm">{company.role}</p>
+              <div className="text-5xl mb-3">{company.logo}</div>
+              <p className="text-text-light font-semibold text-center text-sm">{company.name}</p>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default Companies;
+}
