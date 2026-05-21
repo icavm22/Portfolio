@@ -5,7 +5,6 @@ import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import Projects from '@/components/Projects';
-import Companies from '@/components/Companies';
 import Dashboards from '@/components/Dashboards';
 import Testimonials from '@/components/Testimonials';
 import Footer from '@/components/Footer';
@@ -93,7 +92,6 @@ export default function Home() {
         <Hero />
         <Services />
         <Projects />
-        <Companies />
         <Dashboards />
         <Testimonials />
         <Contact />
