@@ -31,7 +31,6 @@ export default function Navigation() {
             </Link>
           </motion.div>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {menuItems.map((item) => (
               <motion.a
@@ -45,7 +44,6 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* CTA Button */}
           <motion.a
             href="#contact"
             whileHover={{ scale: 1.05 }}
@@ -55,7 +53,6 @@ export default function Navigation() {
             Contactar
           </motion.a>
 
-          {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-accent"
@@ -64,7 +61,6 @@ export default function Navigation() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}

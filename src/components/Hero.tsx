@@ -30,7 +30,6 @@ export default function Hero() {
       id="hero"
       className="min-h-screen pt-20 px-4 sm:px-6 lg:px-8 flex items-center justify-center relative overflow-hidden"
     >
-      {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary z-0" />
       <div className="absolute top-20 right-10 w-96 h-96 bg-accent opacity-5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-10 w-96 h-96 bg-accent opacity-5 rounded-full blur-3xl" />
@@ -60,10 +59,9 @@ export default function Hero() {
           variants={itemVariants}
           className="text-lg text-text-muted mb-8 max-w-2xl mx-auto leading-relaxed"
         >
-          Especialista en Business Intelligence y Control de Proyectos con sólida formación en Ingeniería Civil. Transformo
-          operaciones de construcción mediante la implementación de sistemas de información avanzados, automatización de
-          procesos y analytics en tiempo real. Coordino equipos multidisciplinarios y aseguro cumplimiento simultáneo de
-          plazos, presupuesto y calidad.
+          Especialista en Business Intelligence y Control de Proyectos con solida formacion en Ingenieria Civil. Transformo
+          operaciones de construccion mediante la implementacion de sistemas de informacion avanzados, automatizacion de
+          procesos y analytics en tiempo real.
         </motion.p>
 
         <motion.div
@@ -90,7 +88,6 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}

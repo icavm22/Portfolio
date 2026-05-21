@@ -8,22 +8,22 @@ const services = [
   {
     icon: FiBarChart3,
     title: 'Business Intelligence',
-    description: 'Diseño e implementación de soluciones BI avanzadas con Power BI, dashboards interactivos y análisis predictivo para optimizar la toma de decisiones.',
+    description: 'Diseno e implementacion de soluciones BI avanzadas con Power BI, dashboards interactivos y analisis predictivo.',
   },
   {
     icon: FiTrendingUp,
-    title: 'Gestión de Proyectos',
-    description: 'Control integral de proyectos de construcción con seguimiento de presupuesto, cronograma y recursos. Aseguro cumplimiento de objetivos y calidad.',
+    title: 'Gestion de Proyectos',
+    description: 'Control integral de proyectos de construccion con seguimiento de presupuesto, cronograma y recursos.',
   },
   {
     icon: FiZap,
-    title: 'Automatización de Procesos',
-    description: 'Eliminación de procesos manuales mediante automatización inteligente, reduciendo errores y aumentando eficiencia operacional.',
+    title: 'Automatizacion de Procesos',
+    description: 'Eliminacion de procesos manuales mediante automatizacion inteligente, reduciendo errores y aumentando eficiencia.',
   },
   {
     icon: FiDatabase,
-    title: 'Consultoría Estratégica',
-    description: 'Asesoramiento especializado en transformación digital, integración de sistemas y optimización de operaciones multiproyecto.',
+    title: 'Consultoria Estrategica',
+    description: 'Asesoramiento especializado en transformacion digital, integracion de sistemas y optimizacion de operaciones.',
   },
 ];
 
@@ -40,7 +40,7 @@ export default function Services() {
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-text-light mb-4">Servicios</h2>
           <p className="text-text-muted text-lg max-w-2xl mx-auto">
-            Soluciones integrales de Business Intelligence y gestión de proyectos
+            Soluciones integrales de Business Intelligence y gestion de proyectos
           </p>
         </motion.div>
 
